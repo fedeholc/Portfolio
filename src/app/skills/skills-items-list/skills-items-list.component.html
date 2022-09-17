@@ -1,0 +1,42 @@
+<!-- https://www.tiagoalmeida.dev/posts/making-a-pure-css-circular-progress-bar.html -->
+ 
+  
+    <!-- acá falta poner conidcional lo de over50 -->
+    <!-- lo de {{masde50}} pone "over50" cuando corresponde por el valor, sino nada -->
+
+
+    <div class="col  ">
+
+      <div class="row justify-content-center">
+    
+        <div class="progress-circle {{ masde50 }} p{{ portfolioItem.valor }}">
+          <span><img   height="60" width="60" src="{{ portfolioItem.logo }}" /></span>
+          <div class="left-half-clipper">
+            <div class="first50-bar"></div> 
+            <div class="value-bar"></div>
+          </div>
+        </div>
+        <div style="padding-bottom: 10px; text-align: center">
+          <h5 style="margin-top: -5px;">{{ portfolioItem.nombre }}</h5>
+          <div  *ngIf="authService.isLoggedIn" class="btn-edit" style="padding-bottom: 20px;">
+            <app-skills-update-form
+              ngbTooltip="Editar ítem"
+              [portfolioItemUpdate]="portfolioItem"
+              (onUpdateItem)="onUpdate($event)"
+            ></app-skills-update-form>
+          
+            <button
+              ngbTooltip="Borrar ítem"
+              class="pointer miboton-der"
+              (click)="onDelete(portfolioItem)"
+            >
+              &nbsp;<i class="fa fa-trash"></i>&nbsp;
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  
+   
+ 

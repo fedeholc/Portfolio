@@ -1,0 +1,72 @@
+<div
+  class=""
+  style="
+    padding-bottom: 12px;
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid #ffc107;
+  "
+>
+  <!-- banner -->
+  <div class="row" id="encabezado">
+    <img src="{{miPortfolio.banner}}"  />
+  </div>
+
+  <!-- una fila para foto y sobre mí -->
+  <div
+    style="background-color: #fbfbfa"
+    class="row border p-0 m-0 border-0 border-secondary"
+  >
+    <!-- dos columnas, una para la foto otra para el sobre mi  -->
+    <!-- columna para la foto -->
+    <div class="border-1 col-sm-4 border-primary ps-3">
+      <div style="display: block; text-align: center">
+        <img
+          height="150"
+          width="150"
+          style="
+            margin-top: -75px;
+            margin-bottom: 10px;
+            margin-left: 0px;
+            border: 3px solid #5aaee8;
+            border-radius: 50%;
+          "
+          src="{{ miPortfolio.foto }}"
+          alt="foto de perfil"
+        />
+        <h2>{{ miPortfolio.nombre }}</h2>
+        <h5>{{ miPortfolio.titulo }}</h5>
+        <p style="margin-bottom: 7px"> 
+          {{ miPortfolio.ubicacion }} </p>
+        <p>  {{ miPortfolio.mail }}
+        </p>
+      </div>
+    </div>
+
+    <!-- columna para el sobre mi -->
+    <div class="border border-0 col p-4 pb-3 align-self-center">
+      <div class="card mat-card p-4 pb-2" style="border: 1px solid #5aaee8">
+        <div class="card card-title border-0">
+          <div class="d-flex justify-content-between">
+            <h3 style="color: #47397b">¡Hola! <span style="color: rgb(255, 59, 173);">=)</span></h3>
+          </div>
+        </div>
+        <div>
+          <p style="white-space: pre-line; font-family: Noto Serif, Serif; font-size: 1.05rem; color: black;" id="text-sobremi">{{ miPortfolio.descripcion }}</p>
+        </div>
+      </div>
+
+      <div *ngIf="authService.isLoggedIn" style="padding-top: 10px; float: right;" >
+
+        <button type="button" (click)="restaurar()" class="btn btn-sm btn-primary rounded-pill">&nbsp;<i class="fa fa-undo"></i
+            >&nbsp;&nbsp;Restaurar&nbsp;</button>&nbsp;
+            <app-header-update-form
+          [portfolioItemUpdate]="miPortfolio"
+          (onUpdateItem)="onUpdate($event)"
+        ></app-header-update-form>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,223 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      Modificar datos personales
+    </h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+
+  <div class="modal-body">
+    <form #form="ngForm">
+      <div class="containter">
+        <div class="row">
+          <div class="col-md-6 p-2">
+            <label for="idNombre">Nombre:</label>
+            <input
+              [(ngModel)]="portfolioItemUpdate.nombre"
+              required
+              type="text"
+              name="nombre"
+              class="form-control"
+              #n="ngModel"
+              minlength="4"
+              maxlength="255"
+              
+            />
+
+            <div *ngIf="n.invalid && (n.dirty || n.touched)" class="form-error">
+              <div *ngIf="n.errors?.['required']">Ingresar nombre.</div>
+              <div *ngIf="n.errors?.['minlength']">
+                El nombre debe tener al menos 4 caracteres.
+              </div>
+              
+              
+            </div>
+          </div>
+
+          <div class="col-md-6 p-2">
+            <label for="idTitulo">Título:</label>
+            <input
+              [(ngModel)]="portfolioItemUpdate.titulo"
+              required
+              type="text"
+              name="titulo"
+              class="form-control"
+              #t="ngModel"
+              minlength="4"
+              maxlength="255"
+            />
+
+            <div *ngIf="t.invalid && (t.dirty || t.touched)" class="form-error">
+              <div *ngIf="t.errors?.['required']">Ingresar un título.</div>
+              <div *ngIf="t.errors?.['minlength']">
+                El título debe tener al menos 4 caracteres.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 p-2">
+            <label for="idMail">Email:</label>
+            <input
+              [(ngModel)]="portfolioItemUpdate.mail"
+              required email
+              type="text"
+              name="mail"
+              class="form-control"
+              #m="ngModel"
+              minlength="4"
+              maxlength="255"
+            />
+
+            <div *ngIf="m.invalid && (m.dirty || m.touched)" class="form-error">
+              <div *ngIf="m.errors?.['required']">Ingresar una dirección de email.</div>
+              Ingresar una dirección de email válida.
+            </div>
+          </div>
+
+          <div class="col-md-6 p-2">
+            <label for="idUbicacion">Ubicación:</label>
+            <input
+              [(ngModel)]="portfolioItemUpdate.ubicacion"
+              required
+              type="text"
+              name="ubicacion"
+              class="form-control"
+              #u="ngModel"
+              minlength="4"
+              maxlength="255"
+            />
+
+            <div *ngIf="u.invalid && (u.dirty || u.touched)" class="form-error">
+              <div *ngIf="u.errors?.['required']">Ingresar una ubicación.</div>
+              <div *ngIf="u.errors?.['minlength']">
+                La ubicación debe tener al menos 4 caracteres.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 p-2">
+            <label for="idInstitucion">Sobre mí:</label>
+            <textarea
+              [(ngModel)]="portfolioItemUpdate.descripcion"
+              required
+              type="text"
+              name="descripcion"
+              class="form-control"
+              #s="ngModel"
+              minlength="4"
+              maxlength="255"
+              rows="3"
+            ></textarea>
+
+            <div *ngIf="s.invalid && (s.dirty || s.touched)" class="form-error">
+              <div *ngIf="s.errors?.['required']">Ingresar texto.</div>
+              <div *ngIf="s.errors?.['minlength']">
+                El texto debe tener al menos 4 caracters.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 p-2">
+            <label for="idBanner">Enlace a la imagen de cabecera:</label>
+            <input
+              class="form-control"
+              name="banner"
+              type="text"
+              required
+              [(ngModel)]="portfolioItemUpdate.banner"
+              #ib="ngModel"
+              placeholder="https://"
+              minlength="4"
+              maxlength="255"
+              pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+              
+            />
+
+            <div 
+              *ngIf="ib.invalid && (ib.dirty || ib.touched)"
+              class="form-error"
+            >
+              <div *ngIf="ib.errors?.['required']">Ingresar un enlace.</div>
+              <div *ngIf="ib.errors?.['minlength']">
+                El enlace debe tener al menos 4 caracteres.
+              </div>
+              <div *ngIf="ib.errors?.['pattern']">Ingresar una dirección de enlace válida (https://...)</div>
+            </div>
+          </div>
+
+          <div class="col-md-12 p-2" style="text-align: center">
+            <img
+              style="max-width: 300px"
+              alt="imagen de cabecera"
+              src="{{ portfolioItemUpdate.banner }}"
+            />
+          </div>
+
+          <div class="col-md-12 p-2">
+            <label for="idFoto">Enlace a la imagen de perfil:</label>
+            <input
+              class="form-control"
+              name="foto"
+              type="text"
+              required
+              placeholder="https://"
+              [(ngModel)]="portfolioItemUpdate.foto"
+              #ip="ngModel"
+              minlength="4"
+              maxlength="255"
+              pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+            />
+
+            <div
+              *ngIf="ip.invalid && (ip.dirty || ip.touched)"
+              class="form-error"
+            >
+              <div *ngIf="ip.errors?.['required']">Ingresar un enlace.</div>
+              <div *ngIf="ip.errors?.['minlength']">
+                El enlace debe tener al menos 4 caracteres.
+              </div>
+              <div *ngIf="ip.errors?.['pattern']">Ingresar una dirección de enlace válida (https://...)</div>
+            </div>
+          </div>
+
+          <div class="col-md-12 p-2" style="text-align: center">
+            <img
+              style="max-width: 300px"
+              alt="imagen de perfil"
+              src="{{ portfolioItemUpdate.foto }}"
+            />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal-footer d-flex justify-content-center">
+    <button
+      [disabled]="form.invalid"
+      type="button"
+      class="btn btn-primary"
+      (click)="saveUpdate()"
+    >
+      Guardar
+    </button>
+    <button type="button" class="btn btn-primary" (click)="cancelUpdate()">
+      Cancelar
+    </button>
+  </div>
+</ng-template>
+
+<button
+  type="button"
+  (click)="open(content)"
+  class="btn btn-sm btn-primary rounded-pill"
+>
+  &nbsp;<i class="fa fa-pen"></i>&nbsp;&nbsp;Editar&nbsp;
+</button>

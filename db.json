@@ -1,0 +1,29 @@
+{
+  "educa": [
+    {
+      "id": 1,
+      "titulo": "Agosto 5 a las 12:00",
+      "insti": "tarea 1"
+    },
+    {
+      "id": 2,
+      "titulo": "Agosto 6 a las 13:00",
+      "insti": "tarea 2"
+    },
+    {
+      "titulo": "b",
+      "insti": "b",
+      "id": 3
+    },
+    {
+      "titulo": "n",
+      "insti": "n",
+      "id": 4
+    },
+    {
+      "titulo": "f",
+      "insti": "f",
+      "id": 5
+    }
+  ]
+}

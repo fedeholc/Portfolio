@@ -1,0 +1,44 @@
+ 
+
+<div class="card mat-card" style="border: 1px solid #5aaee8">
+  <div
+  class="card card-title border-0 bg-light ps-3 p-1 pt-2 d-flex justify-content-between"
+>
+      <div class="d-flex justify-content-between">
+        <h3 style="color: #47397b">Idiomas</h3>
+        
+       
+      </div>
+    </div>
+  
+    <!--item -->
+    <app-idiomas-items-list
+      *ngFor="let itemPortfolio of misdatosPortfolioList"
+      [portfolioItem]="itemPortfolio"
+      (onDeleteItem)="deleteItem(itemPortfolio)"
+      (onUpdateItem)="updateItem($event)"
+    >Cargando...
+    </app-idiomas-items-list>
+ 
+    <div
+    *ngIf="authService.isLoggedIn"
+    class="card-footer pe-3"
+    style="border-top: 1px solid #5aaee8; background-color: white"
+  >
+    <div style="text-align: right">
+      <button
+        type="button"
+        (click)="restaurar()"
+        class="btn-edit me-2 p-1 btn btn-sm btn-primary rounded-pill"
+      >
+        &nbsp; <i class="fa fa-undo"></i>&nbsp;&nbsp;Restaurar&nbsp;&nbsp;
+      </button>
+
+      <app-idiomas-add-item-form
+        (onAddItem)="addItem($event)"
+      ></app-idiomas-add-item-form>
+    </div>
+  </div>
+
+</div>
+ 

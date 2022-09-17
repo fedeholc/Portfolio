@@ -1,0 +1,148 @@
+<ng-template #modalAddPortfolio let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Educación</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form #form="ngForm"  > 
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 p-2">
+            <label for="idTitulo">Título:</label>
+            <input
+              [(ngModel)]="portfolioNewItem.titulo"
+              required
+              minlength="4"
+              maxlength="255"
+              type="text"
+              name="eTitulo"
+              class="form-control"
+              id="idTitulo"
+              #titulo="ngModel"
+              />
+              <div
+                *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)"
+                class="form-error"
+              >
+                <div *ngIf="titulo.errors?.['required']">Ingresar título.</div>
+                <div *ngIf="titulo.errors?.['minlength']">
+                  El título debe tener al menos 4 caracteres.
+                </div>
+              </div>
+               
+            </div>
+         
+          <div class="col-md-8 p-2">
+            <label for="idInstitucion">Institución:</label>
+            <input
+              [(ngModel)]="portfolioNewItem.institucion"
+              required
+              minlength="4"
+              maxlength="255"
+              type="text"
+              name="eInstitucion"
+              class="form-control"
+              id="idInstitucion"
+              #insti="ngModel"
+              />
+              <div
+                *ngIf="insti.invalid && (insti.dirty || insti.touched)"
+                class="form-error"
+              >
+                <div *ngIf="insti.errors?.['required']">Ingresar institución.</div>
+                <div *ngIf="insti.errors?.['minlength']">
+                  La institución debe tener al menos 4 caracteres.
+                </div>
+              </div>
+               
+            </div>
+ 
+
+          <div class="col-md-4 p-2">
+            <label for="idPeriodo">Período:</label>
+            <input
+              [(ngModel)]="portfolioNewItem.periodo"
+              required
+              minlength="4"
+              maxlength="255"
+              type="text"
+              name="ePeriodo"
+              class="form-control"
+              id="idPeriodo"
+              #periodo="ngModel"
+              />
+              <div
+                *ngIf="periodo.invalid && (periodo.dirty || periodo.touched)"
+                class="form-error"
+              >
+                <div *ngIf="periodo.errors?.['required']">Ingresar período.</div>
+                <div *ngIf="periodo.errors?.['minlength']">
+                  El período debe tener al menos 4 caracteres.
+                </div>
+              </div>
+               
+            </div>
+       
+            <div class="col-md-12 p-2">
+              <label for="idLogo">Enlace a la imagen de la institución:</label>
+              <input
+                class="form-control"
+                name="foto"
+                type="text"
+                required
+                placeholder="https://"
+                [(ngModel)]="portfolioNewItem.logo"
+                #ip="ngModel"
+                minlength="4"
+                maxlength="255"
+                pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+
+              />
+  
+              <div
+                *ngIf="ip.invalid && (ip.dirty || ip.touched)"
+                class="form-error"
+              >
+                <div *ngIf="ip.errors?.['required']">Ingresar un enlace.</div>
+                <div *ngIf="ip.errors?.['minlength']">
+                  El enlace debe tener al menos 4 caracteres.
+                </div>
+                <div *ngIf="ip.errors?.['pattern']">Ingresar una dirección de enlace válida (https://...)</div>
+
+              </div>
+            </div>
+  
+            <div class="col-md-12 p-2" style="text-align: center">
+              <img
+                style="max-width: 300px"
+                alt="Imagen de la institución."
+                src="{{ portfolioNewItem.logo }}"
+              />
+            </div>
+          </div>
+        </div>
+    </form>
+  </div>
+  <div class="modal-footer d-flex justify-content-center">
+    <button [disabled]="form.invalid" type="button" class="btn btn-primary" (click)="addItem()">
+      Guardar
+    </button>
+    <button type="button" class="btn btn-primary" (click)="cancelAddItem()">
+      Cancelar
+    </button>
+  </div>
+</ng-template>
+
+<button
+  type="button"
+  
+  (click)="open(modalAddPortfolio)"
+  class="btn btn-sm btn-primary rounded-pill me-1"
+>
+  &nbsp;<i class="fa fa-plus"></i>&nbsp;&nbsp;Agregar&nbsp;
+</button>

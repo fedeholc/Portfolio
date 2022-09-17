@@ -1,0 +1,11 @@
+{
+	"nombre": "Juan Perez",
+    "educacion": [{
+        "institucion": "El rancho",
+        "titulo": "tecnico"
+    },{
+        "institucion": "fsoc",
+        "titulo": "licenciado"
+    }
+]
+}
