@@ -1,49 +1,23 @@
 <!--bloque educación-->
 
-<div class="card mat-card" style="border: 1px solid #5aaee8">
-  <div
-  class="card card-title border-0 bg-light ps-3 p-1 pt-2 d-flex justify-content-between"
->
-    <div class="d-flex justify-content-between">
-      <h3 style="color: #47397b">Educación</h3>
-      <div class="d-flex justify-content-between">
-        <!-- ver que hacer con esto -->
-     <!--    <div class="btn-edit p-1" onclick="cambiar_parrafo()">
-          <a href="#" class=""><i class="fa fa-arrow-up"></i></a>
-        </div>
-        <div class="btn-edit p-1" onclick="cambiar_parrafo()">
-          <a href="#" class=""><i class="fa fa-arrow-down"></i></a>
-        </div> -->
-      </div>
-    </div>
+<div class="card mat-card bloque">
+  <div class="card card-title border-0 bg-light ps-3 p-1 pt-2 d-flex justify-content-between">
+    <h3>Educación</h3>
   </div>
 
   <!--item -->
-  <app-educacion-items-list
-    *ngFor="let itemPortfolio of misdatosPortfolioList"
-    [portfolioItem]="itemPortfolio"
-    (onDeleteItem)="deleteItem(itemPortfolio)"
-    (onUpdateItem)="updateItem($event)"
-  >Cargando...
+  <app-educacion-items-list *ngFor="let itemPortfolio of misdatosPortfolioList" [portfolioItem]="itemPortfolio"
+    (onDeleteItem)="deleteItem(itemPortfolio)" (onUpdateItem)="updateItem($event)">Cargando...
   </app-educacion-items-list>
 
-  <div *ngIf="authService.isLoggedIn"
-    class="card-footer pe-3"
-    style="border-top: 1px solid #5aaee8; background-color: white"
-  >
-    <div style="text-align: right">
-      <button
-        type="button"
-        (click)="restaurar()"
-        class="btn-edit me-2 p-1 btn btn-sm btn-primary rounded-pill"
-      >
+  <div *ngIf="authService.isLoggedIn" class="card-footer pe-3 barra-edicion">
+  
+      <button type="button" (click)="restaurar()" class="btn-edit me-2 p-1 btn btn-sm btn-primary rounded-pill">
         &nbsp; <i class="fa fa-undo"></i>&nbsp;&nbsp;Restaurar&nbsp;&nbsp;
       </button>
 
-      <app-educacion-add-item-form
-        (onAddItem)="addItem($event)"
-      ></app-educacion-add-item-form>
-    </div>
+      <app-educacion-add-item-form (onAddItem)="addItem($event)"></app-educacion-add-item-form>
+   
   </div>
 </div>
 

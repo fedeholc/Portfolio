@@ -1,69 +1,38 @@
 <!-- NAV BAR -->
-<nav
-  style="background-color: #5aaee8; color: #fbfbfa" 
-  class="navbar sticky-top navbar-expand-lg justify-content-between"
->
+<nav class="navbar sticky-top navbar-expand-lg justify-content-between">
   <!-- NAV BAR Lado Izquierdo -->
-  <div class="navbar-izq" style="margin-left: 0.4rem">
-    <div role="group"  class="btn-group"> 
-    <a
-      style="color: #fbfbfa"
-      class="navbar-brand"
-      href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa"
-    >
-  
-      <img
-        alt="logo INTI"
-        src="assets/logosargentinaprograma.png"
-        height="50"
-      /></a>
+  <div class="navbar-izq">
+    <div role="group" class="btn-group">
+      <a class="navbar-brand"
+        href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa">
+
+        <img alt="logo INTI" src="assets/logosargentinaprograma.png" height="50" /></a>
     </div>
-      <div role="group"  class="btn-group mr-2">
-      Argentina Programa - #YoProgramo <!-- {{authService.isLoggedIn}} -->
+    <div role="group" class="btn-group mr-2">
+      Argentina Programa - #YoProgramo
+      <!-- {{authService.isLoggedIn}} -->
     </div>
-  
+
   </div>
 
   <!-- NAV BAR Lado Derecho -->
-  <div class="navbar-der" style="margin-right: 1.4rem">
+  <div class="navbar-der" >
     <ul class="nav navbar-top-links">
       <li>
         <div class="text-center">
           <div role="group" aria-label="First group" class="btn-group mr-2">
-            <a
-              style="font-size: 17px; color: white"
-              class="btn btn-social-icon"
-              *ngIf="!this.authService.isLoggedIn"
-              (click)="openFormModalLogIn()"
-              ><i class="fas fa-user"></i> Log in</a
-            >
-            <a
-              style="font-size: 17px; color: white"
-              class="btn btn-social-icon"
-              *ngIf="this.authService.isLoggedIn"
-              (click)="authService.SignOut()"
-              ><i class="fas fa-sign-out-alt"></i> Log out</a
-            >
+            <a style="font-size: 17px; color: white" class="btn btn-social-icon" *ngIf="!this.authService.isLoggedIn"
+              (click)="openFormModalLogIn()"><i class="fas fa-user"></i> Log in</a>
+            <a style="font-size: 17px; color: white" class="btn btn-social-icon" *ngIf="this.authService.isLoggedIn"
+              (click)="authService.SignOut()"><i class="fas fa-sign-out-alt"></i> Log out</a>
           </div>
           <div role="group" aria-label="Second group" class="btn-group mr-2">
-            <a
-            style="color: white; border: 0"
-            href="https://www.linkedin.com/in/federicoholc/"
-            title="LinkedIn"
-            target="_blank"
-            class="btn btn-social-icon"
-            ><i class="fab fa-linkedin fa-lg"></i></a
-          >
-          <a
-              style="color: white; border: 0"
-              href="https://github.com/fedeholc"
-              title="GitHub"
-              target="_blank"
-              class="btn btn-social-icon"
-              ><i class="fab fa-github fa-lg"></i></a
-            >
-       
-             
+            <a style="color: white; border: 0" href="https://www.linkedin.com/in/federicoholc/" title="LinkedIn"
+              target="_blank" class="btn btn-social-icon"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a style="color: white; border: 0" href="https://github.com/fedeholc" title="GitHub" target="_blank"
+              class="btn btn-social-icon"><i class="fab fa-github fa-lg"></i></a>
+
+
           </div>
         </div>
       </li>
@@ -72,55 +41,28 @@
 </nav>
 
 <!--form modal-->
-<div
-  class="modal fade"
-  id="myModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header text-center">
         <h5 class="modal-title">Inicio de sesión</h5>
-        <button
-          type="button"
-          class="btn-close"
-          aria-label="Close"
-          data-bs-dismiss="modal"
-        ></button>
+        <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body mx-3">
         <div class="form-floating mb-3">
-          <input
-            #userName
-            required
-            type="email"
-            class="form-control"
-            id="floatingInput"
-            placeholder="name@example.com"
-          />
+          <input #userName required type="email" class="form-control" id="floatingInput"
+            placeholder="name@example.com" />
           <label for="floatingInput">Email</label>
         </div>
         <div class="form-floating">
-          <input
-            #userPassword
-            required
-            type="password"
-            class="form-control"
-            id="floatingPassword"
-            placeholder="Password"
-          />
+          <input #userPassword required type="password" class="form-control" id="floatingPassword"
+            placeholder="Password" />
           <label for="floatingPassword">Password</label>
         </div>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <input
-          type="button"
-          class="btn btn-primary"
-          value="Log in"
-          (click)="logIn(userName.value, userPassword.value)"
-        />
+        <input type="button" class="btn btn-primary" value="Log in"
+          (click)="logIn(userName.value, userPassword.value)" />
       </div>
     </div>
   </div>

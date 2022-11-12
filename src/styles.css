@@ -1,19 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
- 
+
 
 .ng-valid[required],
 .ng-valid.required {
-  border-left: 5px solid #42a948; /* green */
+  border-left: 5px solid #42a948;
+  /* green */
 }
 
 .ng-invalid:not(form) {
-  border-left: 5px solid #a94442; /* red */
+  border-left: 5px solid #a94442;
+  /* red */
 }
 
- 
+
 .form-control {
   margin-bottom: 10px !important;
 }
+
 .form-error {
   color: darkred;
   font-size: 0.8rem;
@@ -22,40 +25,76 @@
 
 
 .rounded-pill {
-    background-color: transparent;
-    color: #0d63e6;
-    border: 1px solid #0d6efd;
+  background-color: transparent;
+  color: #0d63e6;
+  border: 1px solid #0d6efd;
 }
 
 .seleccion-item:hover {
-    background-color: #d5eeff;
-  }
-  
-    /* revisar */
-  .pointer {
-    cursor: pointer;
-    color: #0d6efd;
-  }
-  .pointer:hover {
-    color: white;
-    background-color: #0d6efd;
-  }
-  /* revisar */
-  
-  .miboton-izq {
-      border: 1px solid #0d6efd;
-      background-color: white;
-     
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
-  
-  }
-  
-  .miboton-der {
-      border: 1px solid #0d6efd;
-      background-color: white;
-     
-      border-top-right-radius: 25px;
-      border-bottom-right-radius: 25px;
-  
-  }
+  background-color: #d5eeff;
+}
+
+/* revisar */
+.pointer {
+  cursor: pointer;
+  color: #0d6efd;
+}
+
+.pointer:hover {
+  color: white;
+  background-color: #0d6efd;
+}
+
+/* revisar */
+
+.miboton-izq {
+  border: 1px solid #0d6efd;
+  background-color: white;
+
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+
+}
+
+.miboton-der {
+  border: 1px solid #0d6efd;
+  background-color: white;
+
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+
+}
+
+.bloque {
+  border: 1px solid #5aaee8;
+}
+
+.bloque h3 {
+  color: #47397b;
+}
+
+.barra-edicion {
+  border-top: 1px solid #5aaee8;
+  background-color: white;
+  text-align: right;
+}
+
+img.item-logo {
+  border-radius: 50%;
+}
+
+.texto-periodo {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.edicion-items {
+  text-align: right;
+}
+
+.imagen-item-upload {
+  text-align: center;
+}
+
+.imagen-item-upload>img {
+  max-width: 300px;
+}

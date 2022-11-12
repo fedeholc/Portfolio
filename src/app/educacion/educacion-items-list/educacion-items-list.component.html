@@ -1,36 +1,25 @@
-
-
 <div class="row p-3 d-flex">
   <div class="col-md-2 p-0 justify-content-center text-center">
-    <img style="border-radius: 50%;"  src="{{ portfolioItem.logo }}" alt="logo" height="90" width="90" />
+    <img class="item-logo" src="{{ portfolioItem.logo }}" alt="logo" height="90" width="90" />
   </div>
 
   <div class="col-md-8 p-0">
-    <span style="color: rgba(0, 0, 0, 0.75);" >{{ portfolioItem.periodo }}</span>
+    <span class="texto-periodo">{{ portfolioItem.periodo }}</span>
     <h4>{{ portfolioItem.titulo }}</h4>
-      <h6>{{ portfolioItem.institucion }}</h6>
+    <h6>{{ portfolioItem.institucion }}</h6>
 
   </div>
 
 
-  <div *ngIf="authService.isLoggedIn" class="col-md-2 pe-3 pt-3" style="text-align: right">
+  <div *ngIf="authService.isLoggedIn" class="col-md-2 pe-3 pt-3 edicion-items">
     <div class="btn-edit">
-       <app-educacion-update-form
-      ngbTooltip="Editar ítem"
-        [portfolioItemUpdate]="portfolioItem"
-        (onUpdateItem)="onUpdate($event)"
-        
-      ></app-educacion-update-form>
-      
-      <button
-      ngbTooltip="Borrar ítem"
-      class="pointer miboton-der"
-      (click)="onDelete(portfolioItem)"
-    >
-      &nbsp;<i class="fa fa-trash"></i>&nbsp;
-    </button>
+      <app-educacion-update-form ngbTooltip="Editar ítem" [portfolioItemUpdate]="portfolioItem"
+        (onUpdateItem)="onUpdate($event)"></app-educacion-update-form>
+
+      <button ngbTooltip="Borrar ítem" class="pointer miboton-der" (click)="onDelete(portfolioItem)">
+        &nbsp;<i class="fa fa-trash"></i>&nbsp;
+      </button>
     </div>
   </div>
 
 </div>
-
