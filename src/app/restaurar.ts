@@ -114,7 +114,7 @@ export class Restaurar {
     nombre: 'Federico Holc',
     titulo: 'Full Stack Web Developer',
     mail: 'federico.holc@gmail.com',
-    descripcion: 'Soy Fede, programador frontend y backend. Me gusta que las webs sean accesibles, bellas, fáciles de usar, y que funcionen bien. En mis ratos libres me dedico a aprender cosas nuevas y a la fotografía. Si querés que hablemos mandame un mail.',
+    descripcion: 'Soy Fede, programador frontend y backend. Me gusta que las webs sean bellas, fáciles de usar, y que funcionen bien. En mis ratos libres me dedico a aprender cosas nuevas y a la fotografía. Si querés que hablemos mandame un mail.',
     foto: 'https://i.postimg.cc/dVsDpjXq/FH-06723-v0-01.jpg',  
     ubicacion: 'Buenos Aires - Argentina',
     banner: 'https://i.postimg.cc/vZ01TfNT/b1a.jpg'  
@@ -122,8 +122,7 @@ export class Restaurar {
  
 
   public static proyectos: Proyecto[] = [
- 
-    {
+     {
       id: 0,
       nombre: 'Mi portfolio',
       descripcion: 'Portfolio web desarrollado como trabajo final para #YoProgramo - Argentina Programa.',
