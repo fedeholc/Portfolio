@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-.ng-valid[required],
+body {
+  background-color: #fbfbfa;
+}
+  .ng-valid[required],
 .ng-valid.required {
   border-left: 5px solid #42a948;
   /* green */
