@@ -1,0 +1,12 @@
+.navbar {
+  background-color: #5aaee8;
+  color: #fbfbfa;
+}
+
+.navbar-izq {
+  margin-left: 0.4rem;
+}
+
+.navbar-der {
+  margin-right: 1.4rem;
+}

@@ -1,0 +1,30 @@
+.header {
+  padding-bottom: 12px;
+  border-radius: 0px 0px 5px 5px;
+  border: 1px solid #ffc107;
+  background-color: #fbfbfa;
+}
+
+#profile-photo {
+  margin-top: -75px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  border: 3px solid #5aaee8;
+  border-radius: 50%;
+}
+
+#smile {
+  color: rgb(255, 59, 173);
+}
+
+#text-sobremi {
+  white-space: pre-line;
+  font-family: Noto Serif, Serif;
+  font-size: 1.05rem;
+  color: black;
+}
+
+#edicion-header {
+  padding-top: 10px;
+  float: right;
+}

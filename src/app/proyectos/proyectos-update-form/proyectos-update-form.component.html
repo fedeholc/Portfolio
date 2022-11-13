@@ -1,138 +1,91 @@
 <ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Modificar</h4>
-      <button
-        type="button"
-        class="btn-close"
-        aria-label="Close"
-        (click)="modal.dismiss('Cross click')"
-      ></button>
-    </div>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modificar</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
 
-    <div class="modal-body">
-      <form #form="ngForm">
-        <div class="containter">
-          <div class="row ">
-            <div class="col-md-12 p-2">
-              <label for="idTitulo">Nombre:</label>
-              <input
-                [(ngModel)]="portfolioItemUpdate.nombre"
-                required
-                type="text"
-                name="nombre"
-                class="form-control"
-                #n="ngModel"
-                minlength="4"
-                maxlength="255"
-              />
-  
-              <div *ngIf="n.invalid && (n.dirty || n.touched)" class="form-error">
-                <div *ngIf="n.errors?.['required']">Ingresar nombre.</div>
-                <div *ngIf="n.errors?.['minlength']">
-                  El nombre debe tener al menos 4 caracteres.
-                </div>
+  <div class="modal-body">
+    <form #form="ngForm">
+      <div class="containter">
+        <div class="row ">
+          <div class="col-md-12 p-2">
+            <label for="idTitulo">Nombre:</label>
+            <input [(ngModel)]="portfolioItemUpdate.nombre" required type="text" name="nombre" class="form-control"
+              #n="ngModel" minlength="4" maxlength="255" />
+
+            <div *ngIf="n.invalid && (n.dirty || n.touched)" class="form-error">
+              <div *ngIf="n.errors?.['required']">Ingresar nombre.</div>
+              <div *ngIf="n.errors?.['minlength']">
+                El nombre debe tener al menos 4 caracteres.
               </div>
             </div>
-    
-            <div class="col-md-12 p-2">
-              <label for="idDescripcion">Descripción:</label>
-              <input
-                [(ngModel)]="portfolioItemUpdate.descripcion"
-                required
-                type="text"
-                name="descripcion"
-                class="form-control"
-                #d="ngModel"
-                minlength="4"
-                maxlength="255"
-              />
-  
-              <div *ngIf="d.invalid && (d.dirty || d.touched)" class="form-error">
-                <div *ngIf="d.errors?.['required']">Ingresar texto.</div>
-                <div *ngIf="d.errors?.['minlength']">
-                  El texto debe tener al menos 4 caracteres.
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-12 p-2">
-              <label for="idDescripcion">Enlace al proyecto:</label>
-              <input
-                [(ngModel)]="portfolioItemUpdate.enlace"
-                required
-                type="text"
-                name="enlace"
-                class="form-control"
-                #e="ngModel"
-                minlength="4"
-                maxlength="255"
-              />
-  
-              <div *ngIf="e.invalid && (e.dirty || e.touched)" class="form-error">
-                <div *ngIf="e.errors?.['required']">Ingresar texto.</div>
-                <div *ngIf="e.errors?.['minlength']">
-                  El texto debe tener al menos 4 caracteres.
-                </div>
-              </div>
-            </div>
- 
-  
-            <div class="col-md-12 p-2">
-              <label for="idLogo">Enlace a la imagen del proyecto:</label>
-              <input
-                class="form-control"
-                name="foto"
-                type="text"
-                required
-                placeholder="https://"
-                [(ngModel)]="portfolioItemUpdate.logo"
-                #ip="ngModel"
-                minlength="4"
-                maxlength="255"
-                pattern="^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
-
-              />
-  
-              <div
-                *ngIf="ip.invalid && (ip.dirty || ip.touched)"
-                class="form-error"
-              >
-                <div *ngIf="ip.errors?.['required']">Ingresar un enlace.</div>
-                <div *ngIf="ip.errors?.['minlength']">
-                  El enlace debe tener al menos 4 caracteres.
-                </div>
-                <div *ngIf="ip.errors?.['pattern']">Ingresar una dirección de enlace válida (https://...)</div>
-
-              </div>
-            </div>
-  
-    
-            <div class="col-md-12 p-2" style="text-align: center">
-              <img
-                style="max-width: 300px"
-                alt="Imagen de idioma"
-                src="{{ portfolioItemUpdate.logo }}"
-              />
-            </div>
-         
-          
-        
-   
-
           </div>
-        </div>    
-      </form>
-    </div>
-    <div class="modal-footer d-flex justify-content-center">
-      <button type="button" class="btn btn-primary" (click)="saveUpdate()">
-        Guardar
-      </button>
-      <button type="button" class="btn btn-primary" (click)="cancelUpdate()">
-        Cancelar
-      </button>
-    </div>
-  </ng-template>
-  
-  <button class="pointer miboton-izq" (click)="open(content)">
-    &nbsp;<i class="fa fa-pen"></i>&nbsp;
-  </button>
+
+          <div class="col-md-12 p-2">
+            <label for="idDescripcion">Descripción:</label>
+            <input [(ngModel)]="portfolioItemUpdate.descripcion" required type="text" name="descripcion"
+              class="form-control" #d="ngModel" minlength="4" maxlength="255" />
+
+            <div *ngIf="d.invalid && (d.dirty || d.touched)" class="form-error">
+              <div *ngIf="d.errors?.['required']">Ingresar texto.</div>
+              <div *ngIf="d.errors?.['minlength']">
+                El texto debe tener al menos 4 caracteres.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 p-2">
+            <label for="idDescripcion">Enlace al proyecto:</label>
+            <input [(ngModel)]="portfolioItemUpdate.enlace" required type="text" name="enlace" class="form-control"
+              #e="ngModel" minlength="4" maxlength="255" />
+
+            <div *ngIf="e.invalid && (e.dirty || e.touched)" class="form-error">
+              <div *ngIf="e.errors?.['required']">Ingresar texto.</div>
+              <div *ngIf="e.errors?.['minlength']">
+                El texto debe tener al menos 4 caracteres.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-12 p-2">
+            <label for="idLogo">Enlace a la imagen del proyecto:</label>
+            <input class="form-control" name="foto" type="text" required placeholder="https://"
+              [(ngModel)]="portfolioItemUpdate.logo" #ip="ngModel" minlength="4" maxlength="255" />
+
+            <div *ngIf="ip.invalid && (ip.dirty || ip.touched)" class="form-error">
+              <div *ngIf="ip.errors?.['required']">Ingresar un enlace.</div>
+              <div *ngIf="ip.errors?.['minlength']">
+                El enlace debe tener al menos 4 caracteres.
+              </div>
+              <div *ngIf="ip.errors?.['pattern']">Ingresar una dirección de enlace válida (https://...)</div>
+
+            </div>
+          </div>
+
+
+          <div class="col-md-12 p-2 imagen-item-upload">
+            <img alt="Imagen de idioma" src="{{ portfolioItemUpdate.logo }}" />
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer d-flex justify-content-center">
+    <button type="button" class="btn btn-primary" (click)="saveUpdate()">
+      Guardar
+    </button>
+    <button type="button" class="btn btn-primary" (click)="cancelUpdate()">
+      Cancelar
+    </button>
+  </div>
+</ng-template>
+
+<button class="pointer miboton-izq" (click)="open(content)">
+  &nbsp;<i class="fa fa-pen"></i>&nbsp;
+</button>

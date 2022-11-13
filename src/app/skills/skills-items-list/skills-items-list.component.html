@@ -16,9 +16,9 @@
             <div class="value-bar"></div>
           </div>
         </div>
-        <div style="padding-bottom: 10px; text-align: center">
-          <h5 style="margin-top: -5px;">{{ portfolioItem.nombre }}</h5>
-          <div  *ngIf="authService.isLoggedIn" class="btn-edit" style="padding-bottom: 20px;">
+        <div id="skill-item" > 
+          <h5>{{ portfolioItem.nombre }}</h5>
+          <div  *ngIf="authService.isLoggedIn" class="btn-edit edicion-skills">
             <app-skills-update-form
               ngbTooltip="Editar ítem"
               [portfolioItemUpdate]="portfolioItem"
