@@ -1,7 +1,7 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Idioma} from 'src/app/portfolio-interface';
-
+import { Restaurar } from 'src/app/restaurar';
 @Component({
   selector: 'app-idiomas-add-item-form',
   templateUrl: './idiomas-add-item-form.component.html',
@@ -18,7 +18,7 @@ export class IdiomasAddItemFormComponent implements OnInit {
     id: 0,
     nombre: '',
     descripcion: '',
-    logo: 'https://i.postimg.cc/MGTTj7JR/715px-UBA-svg.webp',
+    logo: Restaurar.defaultLogoURL,
    };
   //ese logo por default cambiarlo luego
 
@@ -62,7 +62,7 @@ export class IdiomasAddItemFormComponent implements OnInit {
       id: 0,
       nombre: '',
       descripcion: '',
-      logo: 'https://i.postimg.cc/MGTTj7JR/715px-UBA-svg.webp',//luego quitar
+      logo: Restaurar.defaultLogoURL,//luego quitar
  
     };
     this.modalService.dismissAll('guardar');
@@ -73,7 +73,7 @@ export class IdiomasAddItemFormComponent implements OnInit {
       id: 0,
       nombre: '',
       descripcion: '',
-      logo: 'https://i.postimg.cc/MGTTj7JR/715px-UBA-svg.webp',//luego quitar
+      logo: Restaurar.defaultLogoURL,//luego quitar
        
     };
     this.modalService.dismissAll('cancelar');

@@ -1,7 +1,7 @@
 import { Component,   Output, OnInit, EventEmitter } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Edu } from 'src/app/portfolio-interface';
-
+import { Restaurar } from 'src/app/restaurar';
 @Component({
   selector: 'app-educacion-add-item-form',
   templateUrl: './educacion-add-item-form.component.html',
@@ -16,7 +16,7 @@ export class EducacionAddItemForm implements OnInit {
     id: 0,
     titulo: '',
     institucion: '',
-    logo: 'https://i.postimg.cc/MGTTj7JR/715px-UBA-svg.webp',
+    logo: Restaurar.defaultLogoURL,
     periodo: '',
   };
   //ese logo por default cambiarlo luego
@@ -56,7 +56,7 @@ export class EducacionAddItemForm implements OnInit {
       id: 0,
       titulo: '',
       institucion: '',
-      logo: 'https://i.postimg.cc/MGTTj7JR/715px-UBA-svg.webp', //esto luego quitarlo
+      logo: Restaurar.defaultLogoURL, //esto luego quitarlo
       periodo: '',
     };
     this.modalService.dismissAll('guardar');
@@ -67,7 +67,7 @@ export class EducacionAddItemForm implements OnInit {
       id: 0,
       titulo: '',
       institucion: '',
-      logo: 'https://i.postimg.cc/MGTTj7JR/715px-UBA-svg.webp', //esto luego quitarlo
+      logo: Restaurar.defaultLogoURL, //esto luego quitarlo
       periodo: '',
     };
     this.modalService.dismissAll('cancelar');

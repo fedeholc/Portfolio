@@ -1,7 +1,7 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Skill } from 'src/app/portfolio-interface';
-
+import { Restaurar } from 'src/app/restaurar';
 @Component({
   selector: 'app-skills-add-item-form',
   templateUrl: './skills-add-item-form.component.html',
@@ -19,9 +19,9 @@ export class SkillsAddItemFormComponent implements OnInit {
     id: 0,
     nombre: '',
     valor: 0,
-    logo: 'https://i.postimg.cc/MGTTj7JR/715px-UBA-svg.webp',
+    logo: Restaurar.defaultLogoURL,
    };
-  //ese logo por default cambiarlo luego
+ 
 
   constructor(private modalService: NgbModal) {}
 
@@ -63,7 +63,7 @@ export class SkillsAddItemFormComponent implements OnInit {
       id: 0,
       nombre: '',
       valor: 0,
-      logo: 'https://i.postimg.cc/MGTTj7JR/715px-UBA-svg.webp',//luego quitar
+      logo: Restaurar.defaultLogoURL, 
  
     };
     this.modalService.dismissAll('guardar');
@@ -74,7 +74,7 @@ export class SkillsAddItemFormComponent implements OnInit {
       id: 0,
       nombre: '',
       valor: 0,
-      logo: 'https://i.postimg.cc/MGTTj7JR/715px-UBA-svg.webp',//luego quitar
+      logo: Restaurar.defaultLogoURL, 
        
     };
     this.modalService.dismissAll('cancelar');

@@ -9,7 +9,6 @@ public static putPersona = this.apiURL + 'modificar/persona/'
 public static postPersona = this.apiURL + 'new/persona/'
 public static delPersona = this.apiURL + 'delete/persona/'
 
-
 public static getEducacion = this.apiURL + 'ver/educa/'
 public static delEducacion = this.apiURL + 'delete/educa/'
 public static putEducacion = this.apiURL + 'modificar/educa/'

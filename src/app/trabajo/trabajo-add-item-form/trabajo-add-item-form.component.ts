@@ -2,7 +2,7 @@ import { Component, Input, Output, OnInit, EventEmitter, ViewEncapsulation } fro
 import { NgForm } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Trabajo} from 'src/app/portfolio-interface';
-
+import { Restaurar } from 'src/app/restaurar';
 @Component({
   selector: 'app-trabajo-add-item-form',
   templateUrl: './trabajo-add-item-form.component.html',
@@ -20,7 +20,7 @@ export class TrabajoAddItemFormComponent implements OnInit {
     puesto: '',
     descripcion: '',
     lugar: '',
-    logo: 'https://i.postimg.cc/MGTTj7JR/715px-UBA-svg.webp',
+    logo: Restaurar.defaultLogoURL,
     periodo: '',
   };
   //ese logo por default cambiarlo luego

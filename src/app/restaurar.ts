@@ -9,6 +9,8 @@ import {
 
 export class Restaurar {
 
+  public static defaultLogoURL: string = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/320px-A_black_image.jpg";
+  
   public static skills: Skill[] = [
     {
       id: 0,
