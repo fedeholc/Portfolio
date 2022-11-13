@@ -24,9 +24,7 @@
     <div class="border border-0 col p-4 pb-3 align-self-center">
       <div class="card mat-card p-4 pb-2 bloque">
         <div class="card card-title border-0 d-flex justify-content-between">
-
           <h3>¡Hola! <span id="smile">=)</span></h3>
-
         </div>
         <div>
           <p id="text-sobremi">{{ miPortfolio.descripcion }}</p>
@@ -34,7 +32,6 @@
       </div>
 
       <div *ngIf="authService.isLoggedIn" id="edicion-header">
-
         <button type="button" (click)="restaurar()" class="btn btn-sm btn-primary rounded-pill">&nbsp;<i
             class="fa fa-undo"></i>&nbsp;&nbsp;Restaurar&nbsp;</button>&nbsp;
         <app-header-update-form [portfolioItemUpdate]="miPortfolio" (onUpdateItem)="onUpdate($event)">

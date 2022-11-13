@@ -1,6 +1,6 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { Idioma} from 'src/app/portfolio-interface';
+import { Idioma } from 'src/app/portfolio-interface';
 import { Restaurar } from 'src/app/restaurar';
 @Component({
   selector: 'app-idiomas-add-item-form',
@@ -9,7 +9,7 @@ import { Restaurar } from 'src/app/restaurar';
 })
 export class IdiomasAddItemFormComponent implements OnInit {
 
- 
+
   @Output() onAddItem: EventEmitter<any> = new EventEmitter();
 
   closeResult: any;
@@ -19,12 +19,12 @@ export class IdiomasAddItemFormComponent implements OnInit {
     nombre: '',
     descripcion: '',
     logo: Restaurar.defaultLogoURL,
-   };
+  };
   //ese logo por default cambiarlo luego
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   // revisar si algo de esto vale la pena
   open(content: any) {
@@ -51,19 +51,13 @@ export class IdiomasAddItemFormComponent implements OnInit {
   }
 
   addItem() {
-    if (this.portfolioNewItem.nombre.length === 0) {
-      alert('Please add a task!'); //cambiar
-      return;
-    }
-
     this.onAddItem.emit(this.portfolioNewItem);
-    
     this.portfolioNewItem = {
       id: 0,
       nombre: '',
       descripcion: '',
-      logo: Restaurar.defaultLogoURL,//luego quitar
- 
+      logo: Restaurar.defaultLogoURL,
+
     };
     this.modalService.dismissAll('guardar');
   }
@@ -73,8 +67,8 @@ export class IdiomasAddItemFormComponent implements OnInit {
       id: 0,
       nombre: '',
       descripcion: '',
-      logo: Restaurar.defaultLogoURL,//luego quitar
-       
+      logo: Restaurar.defaultLogoURL,
+
     };
     this.modalService.dismissAll('cancelar');
   }

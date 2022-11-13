@@ -1,4 +1,4 @@
-import { Component,   Output, OnInit, EventEmitter } from '@angular/core';
+import { Component, Output, OnInit, EventEmitter } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Edu } from 'src/app/portfolio-interface';
 import { Restaurar } from 'src/app/restaurar';
@@ -7,6 +7,7 @@ import { Restaurar } from 'src/app/restaurar';
   templateUrl: './educacion-add-item-form.component.html',
   styleUrls: ['./educacion-add-item-form.component.css'],
 })
+
 export class EducacionAddItemForm implements OnInit {
   @Output() onAddItem: EventEmitter<Edu> = new EventEmitter();
 
@@ -19,13 +20,13 @@ export class EducacionAddItemForm implements OnInit {
     logo: Restaurar.defaultLogoURL,
     periodo: '',
   };
-  //ese logo por default cambiarlo luego
 
-  constructor(private modalService: NgbModal) {}
 
-  ngOnInit(): void {}
+  constructor(private modalService: NgbModal) { }
 
-  // revisar si algo de esto vale la pena
+  ngOnInit(): void { }
+
+ 
   open(content: any) {
     this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title', centered: true, size: 'lg', scrollable: true })
@@ -50,7 +51,6 @@ export class EducacionAddItemForm implements OnInit {
   }
 
   addItem() {
-
     this.onAddItem.emit(this.portfolioNewItem);
     this.portfolioNewItem = {
       id: 0,

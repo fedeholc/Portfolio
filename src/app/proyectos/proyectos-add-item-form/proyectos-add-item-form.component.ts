@@ -52,13 +52,8 @@ export class ProyectosAddItemFormComponent implements OnInit {
   }
 
   addItem() {
-    if (this.portfolioNewItem.nombre.length === 0) {
-      alert('Please add a task!'); //cambiar
-      return;
-    }
-
     this.onAddItem.emit(this.portfolioNewItem);
-    
+  
     this.portfolioNewItem = {
       id: 0,
       nombre: '',

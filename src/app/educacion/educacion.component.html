@@ -1,5 +1,4 @@
 <!--bloque educación-->
-
 <div class="card mat-card bloque">
   <div class="card card-title border-0 bg-light ps-3 p-1 pt-2 d-flex justify-content-between">
     <h3>Educación</h3>
@@ -11,14 +10,10 @@
   </app-educacion-items-list>
 
   <div *ngIf="authService.isLoggedIn" class="card-footer pe-3 barra-edicion">
-  
-      <button type="button" (click)="restaurar()" class="btn-edit me-2 p-1 btn btn-sm btn-primary rounded-pill">
-        &nbsp; <i class="fa fa-undo"></i>&nbsp;&nbsp;Restaurar&nbsp;&nbsp;
-      </button>
-
-      <app-educacion-add-item-form (onAddItem)="addItem($event)"></app-educacion-add-item-form>
-   
+    <button type="button" (click)="restaurar()" class="btn-edit me-2 p-1 btn btn-sm btn-primary rounded-pill">
+      &nbsp; <i class="fa fa-undo"></i>&nbsp;&nbsp;Restaurar&nbsp;&nbsp;
+    </button>
+    <app-educacion-add-item-form (onAddItem)="addItem($event)"></app-educacion-add-item-form>
   </div>
 </div>
-
 <!--fin bloque educación-->

@@ -53,7 +53,7 @@ export class ProyectosItemsListComponent implements OnInit {
   onUpdate(itemPortfolio: any) {
     // lo que sigue acutaliza esta vista con el item
     // tal como estaba  antes de su cancelacion porque
-    // sino con el binding tiene guardada la modificacion
+    // sino con el binding queda guardada la modificacion
     this.portfolioItem = itemPortfolio;
     this.onUpdateItem.emit(itemPortfolio);
   }

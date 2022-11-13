@@ -27,7 +27,7 @@ export class SkillsAddItemFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // revisar si algo de esto vale la pena
+ 
   open(content: any) {
     this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title', centered: true, size: 'lg', scrollable: true})
@@ -52,11 +52,6 @@ export class SkillsAddItemFormComponent implements OnInit {
   }
 
   addItem() {
-    if (this.portfolioNewItem.nombre.length === 0) {
-      alert('Please add a task!'); //cambiar
-      return;
-    }
-
     this.onAddItem.emit(this.portfolioNewItem);
     
     this.portfolioNewItem = {
