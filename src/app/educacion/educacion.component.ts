@@ -53,22 +53,40 @@ export class EducacionComponent implements OnInit {
        });
     });
     this.misdatosPortfolioList.splice(0);
+      
+ /*    Restaurar.educacion.forEach((element, index) => {
    
-    Restaurar.educacion.forEach((element, index) => {
-     this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, element).subscribe((item: Edu) => {
-        this.misdatosPortfolioList.push(item);
-        this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[2]).subscribe((item: Edu) => {
+        this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, element).subscribe((item: Edu) => {
           this.misdatosPortfolioList.push(item);
-          this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[3]).subscribe((item: Edu) => {
+  
+        });
+      });  */
+         // Para el deploy a heroku o koyeb/planetscale lo de arriba funcionaba bien
+    // pero ahora con la base de datos en clever cloud que solo admite 5 conexiones
+    // simultaneas, eso no sirve, hay que ir una por una.
+    //
+    // Aún no encontré el equivalente de async/await para trabajar con observables
+    // mientras tanto queda esta "solución"
+    // otra alternativa sería modificar la api para mandar todo en una sola petición 
+  
+        this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[0]).subscribe((item: Edu) => {
+          this.misdatosPortfolioList.push(item);
+          this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[1]).subscribe((item: Edu) => {
             this.misdatosPortfolioList.push(item);
-            this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[4]).subscribe((item: Edu) => {
+            this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[2]).subscribe((item: Edu) => {
               this.misdatosPortfolioList.push(item);
+              this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[3]).subscribe((item: Edu) => {
+                this.misdatosPortfolioList.push(item);
+                this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[4]).subscribe((item: Edu) => {
+                  this.misdatosPortfolioList.push(item);
 
+                });
+              });
             });
           });
         });
-      });
-    });
+       
+     
 
 
   }

@@ -1,7 +1,7 @@
 export class ApiEndPoint {
-//public static apiURL = 'http://localhost:8088/';
+public static apiURL = 'http://localhost:8088/';
 // public static apiURL = 'https://test-portfolio-fh.herokuapp.com/';
-  public static apiURL = 'https://portfolio-federicoholc.koyeb.app/'
+//  public static apiURL = 'https://portfolio-federicoholc.koyeb.app/'
 
 
 public static getPersona = this.apiURL + 'ver/persona/'
