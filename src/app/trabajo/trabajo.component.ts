@@ -54,13 +54,35 @@ export class TrabajoComponent implements OnInit {
     });
     this.misdatosPortfolioList.splice(0);
    
-    Restaurar.trabajos.forEach((element, index) => {
+  /*   Restaurar.trabajos.forEach((element, index) => {
    
         this.datosPortfolio.addItemPortfolio(ApiEndPoint.postTrabajo, element).subscribe((item: Trabajo) => {
           this.misdatosPortfolioList.push(item);
   
         });
+      }); */
+         // Para el deploy a heroku o koyeb/planetscale lo de arriba funcionaba bien
+    // pero ahora con la base de datos en clever cloud que solo admite 5 conexiones
+    // simultaneas, eso no sirve, hay que ir una por una.
+    //
+    // Aún no encontré el equivalente de async/await para trabajar con observables
+    // mientras tanto queda esta "solución"
+    // otra alternativa sería modificar la api para mandar todo en una sola petición 
+    this.datosPortfolio.addItemPortfolio(ApiEndPoint.postTrabajo, Restaurar.trabajos[0]).subscribe((item: Trabajo) => {
+      this.misdatosPortfolioList.push(item);
+      this.datosPortfolio.addItemPortfolio(ApiEndPoint.postTrabajo, Restaurar.trabajos[1]).subscribe((item: Trabajo) => {
+        this.misdatosPortfolioList.push(item);
+        this.datosPortfolio.addItemPortfolio(ApiEndPoint.postTrabajo, Restaurar.trabajos[2]).subscribe((item: Trabajo) => {
+          this.misdatosPortfolioList.push(item);
+          this.datosPortfolio.addItemPortfolio(ApiEndPoint.postTrabajo, Restaurar.trabajos[3]).subscribe((item: Trabajo) => {
+            this.misdatosPortfolioList.push(item);
+            this.datosPortfolio.addItemPortfolio(ApiEndPoint.postTrabajo, Restaurar.trabajos[4]).subscribe((item: Trabajo) => {
+              this.misdatosPortfolioList.push(item);
+
+            });
+          });
+        });
       });
-     
+    });
   }
 }
