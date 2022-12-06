@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Edu } from 'src/app/portfolio-interface';
+import { Edu} from 'src/app/portfolio-interface';
 import { Restaurar } from '../restaurar';
 import { PortfolioService } from 'src/app/portfolio.service';
 import { AuthService } from '../shared/services/auth.service';
@@ -16,7 +16,7 @@ export class EducacionComponent implements OnInit {
   constructor(
     private datosPortfolio: PortfolioService,
     public authService: AuthService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosPortfolio(ApiEndPoint.getEducacion).subscribe((data: Edu[]) => {
@@ -26,14 +26,14 @@ export class EducacionComponent implements OnInit {
   }
 
   addItem(itemPortfolio: any) {
-    this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, itemPortfolio).subscribe((item: Edu) => {
+    this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion,itemPortfolio).subscribe((item: Edu) => {
       this.misdatosPortfolioList.push(item);
     });
   }
+ 
 
-
-  updateItem(itemPortfolio: any) {
-
+  updateItem(itemPortfolio: any){
+    
     this.datosPortfolio.updateItemPortfolio(ApiEndPoint.putEducacion, itemPortfolio).subscribe((item: Edu) => {
 
     });
@@ -47,18 +47,30 @@ export class EducacionComponent implements OnInit {
     });
   }
 
-  restaurar() {
+  restaurar(){
     this.misdatosPortfolioList.forEach((element, index) => {
       this.datosPortfolio.deleteItemPortfolio(ApiEndPoint.delEducacion, element).subscribe(() => {
-      });
+       });
     });
     this.misdatosPortfolioList.splice(0);
-
+   
     Restaurar.educacion.forEach((element, index) => {
-      this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, element).subscribe((item: Edu) => {
+     this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, element).subscribe((item: Edu) => {
         this.misdatosPortfolioList.push(item);
+        this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[2]).subscribe((item: Edu) => {
+          this.misdatosPortfolioList.push(item);
+          this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[3]).subscribe((item: Edu) => {
+            this.misdatosPortfolioList.push(item);
+            this.datosPortfolio.addItemPortfolio(ApiEndPoint.postEducacion, Restaurar.educacion[4]).subscribe((item: Edu) => {
+              this.misdatosPortfolioList.push(item);
+
+            });
+          });
+        });
       });
     });
+
+
   }
 
 
