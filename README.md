@@ -1,16 +1,20 @@
-# Welcome to Frontend Portfolio Argentina Programa 👋
+# Bienvenido al Front-end Portfolio Argentina Programa 👋
 
 **Frontend del proyecto de portfolio para Argentina Programa #YoProgramo**
 
-Backend: [https://github.com/fedeholc/Portfolio-Backend](https://github.com/fedeholc/Portfolio-Backend)
+Se puede ver funcionando aquí: [https://portfolioap-cccf4.web.app/](https://portfolioap-cccf4.web.app)
 
-## Author
+_Para acceder a las funciones de edición, loguearse con el usuario ap@argentina.com.ar y la clave "argentina" (sin las comillas)._
+
+Código fuente del Back-end: [https://github.com/fedeholc/Portfolio-Backend](https://github.com/fedeholc/Portfolio-Backend)
+
+## Autor
 
 👤 **Federico Holc**
 
-* Twitter: [@fedeholc](https://twitter.com/fedeholc)
-* Github: [@fedeholc](https://github.com/fedeholc)
-* LinkedIn: [@federico-holc-b4ab9b230](https://linkedin.com/in/federico-holc-b4ab9b230)
+- Twitter: [@fedeholc](https://twitter.com/fedeholc)
+- Github: [@fedeholc](https://github.com/fedeholc)
+- LinkedIn: [@federicoholc](https://linkedin.com/in/federicoholc)
 
 ## 📝 License
 
