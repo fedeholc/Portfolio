@@ -7,9 +7,9 @@ Tecnología Industrial (INTI) , Ministerio de Economía de la Nación, 2022-2023
 Stack utilizado: Angular, TypeScript, JavaScript, HTML, CSS, Bootstrap, JAVA,
 Spring Boot, Hibernate, MySQL, Git, GitHub.
 
-Código fuente del front-end [aquí](https://github.com/fedeholc/Portfolio-Frontend/)
+Código fuente del front-end [aquí](https://github.com/fedeholc/argentinaprograma-Portfolio-Frontend/)
 
-Código fuente del back-end [aquí](https://github.com/fedeholc/Portfolio-Backend/)
+Código fuente del back-end [aquí](https://github.com/fedeholc/argentinaprograma-Portfolio-Backend/)
 
 Online (no siempre): [https://portfolioap-cccf4.web.app/](https://portfolioap-cccf4.web.app)
 
